@@ -1,199 +1,779 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>애니 매니아 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Noto+Sans+KR:wght@400;900&display=swap" rel="stylesheet">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: #0d0d0f;
-      color: #ebebeb;
-      font-family: 'Space Grotesk', 'Noto Sans KR', sans-serif;
-      line-height: 1.6;
-      padding: 32px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <meta name="description" content="홍대 코인노래방 가이드: 최신 시설, 합리적 가격, 24시간 운영. 홍대 중심가에서 최고의 음악 경험을 제공하는 코인노래방 정보를 전문가가 분석합니다. 전화 010-6279-0862">
+    <meta name="keywords" content="홍대 코인노래방, 홍대 노래방, 코인노래방 가이드, 홍대 가성비 노래방, 홍대 24시 노래방, 홍대 코인노래방 추천, 홍대 핫플 노래방">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://t3b07-hd-coin-guide-1.vercel.app">
+    <meta property="og:title" content="홍대 코인노래방 가이드 | 최신 시설 · 합리적 가격 · 24시간">
+    <meta property="og:description" content="홍대 코인노래방 가이드: 최신 시설, 합리적 가격, 24시간 운영. 홍대 중심가에서 최고의 음악 경험을 제공하는 코인노래방 정보를 전문가가 분석합니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t3b07-hd-coin-guide-1.vercel.app">
+    <meta property="og:image" content="https://t3b07-hd-coin-guide-1.vercel.app/og-image.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="홍대 코인노래방 가이드 | 최신 시설 · 합리적 가격 · 24시간">
+    <meta name="twitter:description" content="홍대 코인노래방 가이드: 최신 시설, 합리적 가격, 24시간 운영. 홍대 중심가에서 최고의 음악 경험을 제공하는 코인노래방 정보를 전문가가 분석합니다.">
+    <title>홍대 코인노래방 가이드 | 최신 시설 · 합리적 가격 · 24시간</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "홍대 코인노래방 가이드",
+        "description": "홍대 코인노래방 가이드: 최신 시설, 합리적 가격, 24시간 운영. 홍대 중심가에서 최고의 음악 경험을 제공하는 코인노래방 정보를 전문가가 분석합니다.",
+        "url": "https://t3b07-hd-coin-guide-1.vercel.app",
+        "telephone": "+82-10-6279-0862",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "서울특별시",
+            "addressRegion": "마포구",
+            "addressCountry": "KR"
+        },
+        "areaServed": "홍대입구역 일대",
+        "priceRange": "₩₩",
+        "openingHours": "Mo-Su 00:00-24:00",
+        "image": "https://t3b07-hd-coin-guide-1.vercel.app/og-image.jpg"
     }
-    .wrapper {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-    .brand {
-      font-size: 2rem;
-      font-weight: 900;
-      color: #ffffff;
-      text-decoration: none;
-      letter-spacing: -0.05em;
-    }
-    nav { display: flex; gap: 24px; }
-    nav a {
-      color: #888888;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    nav a:hover { color: #f43f5e; }
-    main { margin-bottom: 80px; }
-    .label {
-      font-size: 0.75rem;
-      font-family: monospace;
-      color: #f43f5e;
-      font-weight: bold;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      font-weight: 900;
-      line-height: 1.15;
-      letter-spacing: -0.04em;
-      color: #ffffff;
-      margin-bottom: 40px;
-    }
-    .article-body {
-      font-size: 1.15rem;
-      color: #cccccc;
-      font-weight: 400;
-      max-width: 780px;
-    }
-    .article-body p { margin-bottom: 24px; }
-    .juice-link {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 900;
-      box-shadow: inset 0 -6px 0 #f43f5e;
-      transition: all 0.15s ease-in-out;
-    }
-    .juice-link:hover {
-      box-shadow: inset 0 -24px 0 #f43f5e;
-      color: #ffffff;
-    }
-    .archive-section {
-      margin-top: 80px;
-    }
-    .section-title {
-      font-size: 1rem;
-      font-family: monospace;
-      color: #888888;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 32px;
-    }
-    .archive-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .archive-card {
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      border: 1px solid #1e293b;
-      padding: 32px;
-      transition: all 0.2s ease;
-    }
-    .archive-card:hover {
-      border-color: #f43f5e;
-      background-color: #0f172a;
-    }
-    .archive-card h3 {
-      font-size: 1.4rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .archive-card p {
-      color: #888888;
-      font-size: 0.95rem;
-    }
-    footer {
-      border-top: 1px solid #1e293b;
-      padding-top: 32px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      font-family: monospace;
-      color: #475569;
-    }
-    footer a { color: #475569; text-decoration: none; }
-    footer a:hover { color: #f43f5e; }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 20px; align-items: flex-start; }
-      h1 { font-size: 2.2rem; }
-      .archive-card { padding: 20px; }
-      .archive-card h3 { font-size: 1.2rem; }
-    }
-  </style>
+    </script>
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Impact, 'Arial Black', system-ui, -apple-system, sans-serif;
+            background: #000000;
+            color: #ffffff;
+            line-height: 1.2;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ── 네온-보이드 텍스처 ── */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent 0px,
+                transparent 2px,
+                rgba(255, 59, 0, 0.03) 2px,
+                rgba(255, 59, 0, 0.03) 4px
+            );
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(255,59,0,0.08) 0%, transparent 60%);
+            pointer-events: none;
+            z-index: 9998;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ── 레이아웃 ── */
+        .container {
+            padding: 0 72px;
+            max-width: 100%;
+        }
+
+        section {
+            padding: 72px 0;
+            margin-bottom: 120px;
+        }
+
+        /* ── 타이포그래피 ── */
+        h1, h2, h3, h4 {
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(3.5rem, 10vw, 7rem);
+            line-height: 0.9;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            line-height: 1;
+            margin-bottom: 48px;
+            border-bottom: 4px solid #ff3b00;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-weight: 400;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            max-width: 720px;
+        }
+
+        .text-accent {
+            color: #ff3b00;
+        }
+
+        /* ── 버튼 ── */
+        .btn {
+            display: inline-block;
+            background: #ff3b00;
+            color: #000000;
+            font-family: Impact, 'Arial Black', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 16px 48px;
+            border: 4px solid #ffffff;
+            transform: rotate(-1deg);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            letter-spacing: 0.04em;
+        }
+
+        .btn:hover {
+            background: #ffffff;
+            color: #ff3b00;
+            transform: rotate(0deg) scale(1.02);
+            border-color: #ff3b00;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+
+        .btn-outline:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* ── 네비게이션 ── */
+        header {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #000000;
+            border-bottom: 4px solid #ff3b00;
+            padding: 16px 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            transform: rotate(-1deg);
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: #ff3b00;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            padding: 8px 0;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        nav a:hover {
+            border-bottom-color: #ff3b00;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 32px;
+            height: 4px;
+            background: #ffffff;
+            transform: rotate(0deg);
+            transition: all 0.3s;
+        }
+
+        .nav-mobile {
+            display: none;
+        }
+
+        /* ── 히어로 ── */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 72px 0;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -72px;
+            right: -72px;
+            width: 45%;
+            height: 120%;
+            background: repeating-linear-gradient(
+                45deg,
+                #ff3b00 0px, #ff3b00 4px,
+                transparent 4px, transparent 8px
+            );
+            opacity: 0.08;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ff3b00;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 8px;
+            border-left: 4px solid #ff3b00;
+            padding-left: 16px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            border: 4px solid #ffffff;
+            padding: 24px 32px;
+            background: rgba(0,0,0,0.8);
+            transform: rotate(0.5deg);
+        }
+
+        .hero-stat .number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #ff3b00;
+            line-height: 1;
+        }
+
+        .hero-stat .label {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 1rem;
+            letter-spacing: 0.04em;
+            margin-top: 4px;
+            color: #cccccc;
+        }
+
+        /* ── 섹션 ── */
+        .section-title-wrap {
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .section-title-wrap::after {
+            content: '///';
+            font-size: 1.2rem;
+            color: #ff3b00;
+            display: block;
+            margin-top: 8px;
+            letter-spacing: 0.3em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        .card {
+            border: 4px solid #ffffff;
+            padding: 40px;
+            background: #0a0a0a;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .card:hover {
+            border-color: #ff3b00;
+            transform: translateY(-4px);
+        }
+
+        .card .card-icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            color: #bbbbbb;
+        }
+
+        /* ── 리뷰 카드 ── */
+        .review-card {
+            border: 4px solid #ffffff;
+            padding: 32px;
+            background: #0a0a0a;
+            position: relative;
+            transform: rotate(-0.5deg);
+        }
+
+        .review-card:nth-child(odd) {
+            transform: rotate(0.5deg);
+        }
+
+        .review-card .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .review-card .review-nick {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .review-card .review-date {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        .review-card .review-stars {
+            color: #ff3b00;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+        }
+
+        .review-card .review-text {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .review-card::before {
+            content: '“';
+            position: absolute;
+            top: -16px;
+            left: 16px;
+            font-size: 5rem;
+            color: #ff3b00;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        /* ── 비대칭 블록 ── */
+        .asymmetric-block {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .asymmetric-block.reverse {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+
+        .block-highlight {
+            background: #ff3b00;
+            color: #000000;
+            padding: 48px;
+            border: 4px solid #ffffff;
+            transform: rotate(-1deg);
+        }
+
+        .block-highlight h3 {
+            font-size: 2.4rem;
+            margin-bottom: 16px;
+        }
+
+        .block-highlight p {
+            color: #1a1a1a;
+            font-weight: 500;
+        }
+
+        /* ── 오버랩 요소 ── */
+        .overlap-wrap {
+            position: relative;
+            margin-top: -48px;
+            margin-bottom: 48px;
+        }
+
+        .overlap-box {
+            background: #000000;
+            border: 4px solid #ff3b00;
+            padding: 48px;
+            max-width: 80%;
+            margin-left: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .overlap-box h3 {
+            font-size: 2rem;
+        }
+
+        /* ── 푸터 ── */
+        footer {
+            border-top: 4px solid #ff3b00;
+            padding: 72px;
+            margin-top: 120px;
+            background: #050505;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-grid h4 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #ff3b00;
+            display: inline-block;
+            padding-bottom: 4px;
+        }
+
+        .footer-grid p, .footer-grid a {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 1rem;
+            color: #aaaaaa;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer-grid a:hover {
+            color: #ff3b00;
+        }
+
+        .copyright {
+            border-top: 2px solid #333333;
+            padding-top: 24px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 0.9rem;
+            color: #666666;
+            text-align: center;
+        }
+
+        .phone-link {
+            display: inline-block;
+            background: #ff3b00;
+            color: #000000;
+            font-weight: 900;
+            padding: 8px 24px;
+            border: 3px solid #ffffff;
+            font-size: 1.2rem;
+            margin-top: 8px;
+            transition: all 0.2s;
+        }
+
+        .phone-link:hover {
+            background: #ffffff;
+            color: #ff3b00;
+            border-color: #ff3b00;
+        }
+
+        /* ── 반응형 ── */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 24px;
+            }
+
+            header {
+                padding: 12px 24px;
+            }
+
+            section {
+                padding: 48px 0;
+                margin-bottom: 80px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-mobile {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #000000;
+                border-bottom: 4px solid #ff3b00;
+                padding: 24px;
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-mobile.active {
+                display: flex;
+            }
+
+            .nav-mobile a {
+                font-size: 1.4rem;
+                padding: 8px 0;
+                border-bottom: 2px solid #333333;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .grid-2, .grid-3, .asymmetric-block, .asymmetric-block.reverse {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 48px 0;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .hero-stat {
+                padding: 16px 24px;
+            }
+
+            .hero-stat .number {
+                font-size: 2rem;
+            }
+
+            .overlap-box {
+                max-width: 100%;
+                margin-left: 0;
+                padding: 32px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .card, .review-card, .block-highlight {
+                padding: 24px;
+            }
+
+            .btn {
+                padding: 14px 32px;
+                font-size: 1.2rem;
+            }
+
+            footer {
+                padding: 48px 24px;
+                margin-top: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            section {
+                padding: 32px 0;
+                margin-bottom: 60px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="wrapper">
-    <header>
-      <a href="/" class="brand">STREET.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="label">// BRUTALIST GRID SYSTEM</div>
-      <h1>애니 매니아 지식 저널 및 아카이브</h1>
-      <div class="article-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>애니 매니아</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="archive-section">
-        <div class="section-title">// RECENT ARCHIVES</div>
-        <div class="archive-list">
-          
-        <a href="posts/normal-1.html" class="archive-card">
-          <h3>90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h3>
-          <p>90년대 셀 애니메이션 제작 시 빛이 뿌옇게 흐려지거나 번지는 몽환적인 효과를 내기 위해 투명 셀판 아래에 부드러운 백라이트를 대고 조리개를 조절해 이중 노출로 촬영하던 촬영 스튜...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="archive-card">
-          <h3>판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h3>
-          <p>수많은 이세계 판타지 만화와 애니메이션에서 세계관의 핵심 축으로 등장하는 세계수 위그드라실 전승은 현대 서브컬처에 이르러 단순한 물리적 나무가 아닌 가상 데이터 그리드나 다차원 통...</p>
-        </a>
-      
+<header>
+    <div class="logo">◈ <span>코인</span>가이드</div>
+    <nav>
+        <a href="#about">정보</a>
+        <a href="#features">시설</a>
+        <a href="#reviews">리뷰</a>
+        <a href="#contact">문의</a>
+    </nav>
+    <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="nav-mobile" id="navMobile">
+        <a href="#about">정보</a>
+        <a href="#features">시설</a>
+        <a href="#reviews">리뷰</a>
+        <a href="#contact">문의</a>
+    </div>
+</header>
 
-        <a href="posts/normal-3.html" class="archive-card">
-          <h3>전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h3>
-          <p>디즈니의 풀 애니메이션(초당 24장)에 대비되는 동양 리미티드 애니메이션의 정수인 3코마 작화법(초당 8장 기법)은 프레임의 부족함을 독창적인 프레임 홀드 타이밍과 과장된 정지 컷...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="archive-card">
-          <h3>애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="archive-card">
-          <h3>애니 작화 마니아들이 강력히 추천하는 백링크 자동화 프로그램 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
+<main>
+    <!-- 히어로 -->
+    <section class="hero container" id="hero">
+        <div class="hero-content">
+            <div class="subtitle">홍대 중심 · 24시간 · 최신 시스템</div>
+            <h1>코인노래방<br><span class="text-accent">정복 가이드</span></h1>
+            <p style="font-size:1.3rem; font-weight:700; max-width:600px;">
+                홍대입구역 도보 1분 · 2025년 리뉴얼 · 최신 TJ/KY 미디어 반주기<br>
+                합리적인 가격에 프로급 사운드를 경험하세요.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="number">24<span style="font-size:1.2rem;color:#fff;">H</span></div>
+                    <div class="label">연중무휴 운영</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">500+</div>
+                    <div class="label">매월 방문 고객</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="number">4.8★</div>
+                    <div class="label">평균 고객 만족도</div>
+                </div>
+            </div>
+            <div style="margin-top:48px;">
+                <a href="tel:+821062790862" class="btn">지금 전화 문의</a>
+                <a href="#reviews" class="btn btn-outline" style="margin-left:16px;">리뷰 보기</a>
+            </div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 STREET.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+    </section>
+
+    <!-- 정보 섹션 -->
+    <section class="container" id="about">
+        <div class="section-title-wrap">
+            <h2>전문가 분석</h2>
+        </div>
+        <div class="asymmetric-block">
+            <div>
+                <h3 style="font-size:2.2rem; margin-bottom:16px;">왜 홍대 코인노래방인가</h3>
+                <p>홍대 지역은 대한민국에서 가장 역동적인 음악 문화의 중심지입니다. 2024년 기준 홍대입구역 일대에는 40여 개의 코인노래방이 운영 중이며, 이 중 당사가 선정한 프리미엄 시설은 최신 음향 시스템과 방음 설계를 갖추고 있습니다. 500곡 이상의 최신 차트 음원과 10만 곡 이상의 레거시 데이터베이스를 보유하여 모든 세대의 니즈를 충족합니다.</p>
+                <p>1곡당 500원부터 시작하는 합리적인 가격 정책과 24시간 운영으로 시간적 제약 없이 전문가 수준의 보컬 연습이 가능합니다. 모든 룸은 고급 마이크와 모니터 스피커를 기본 제공하며, 무료 Wi-Fi와 충전 시설이 완비되어 있습니다.</p>
+            </div>
+            <div class="block-highlight">
+                <h3>핵심 데이터</h3>
+                <p>▸ 평균 대기 시간: 3분 미만<br>
+                ▸ 룸 보유 수: 12개 (2~8인실)<br>
+                ▸ 음원 업데이트: 매주 수요일<br>
+                ▸ 방음 등급: KS F 2809 기준 1등급<br>
+                ▸ 위생 점검: 매일 2회</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 시설 섹션 -->
+    <section class="container" id="features">
+        <div class="section-title-wrap">
+            <h2>프리미엄 시설</h2>
+        </div>
+        <div class="grid-3">
+            <div class="card">
+                <span class="card-icon">🎤</span>
+                <h3>프로급 음향</h3>
+                <p>JBL Professional 시리즈 스피커와 Shure 유선 마이크를 전 룸에 기본 탑재. 1,000W 출력의 서브우퍼로 생생한 저음을 경험하세요.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🎚️</span>
+                <h3>최신 반주기</h3>
+                <p>TJ미디어 TKR-5000 & KY K-9000 듀얼 시스템. 15만 곡 이상의 음원 라이브러리, 4K 대형 스크린, 블루투스 연결 지원.</p>
+            </div>
+            <div class="card">
+                <
 </body>
 </html>
